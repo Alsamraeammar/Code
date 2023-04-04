@@ -32,7 +32,6 @@ def generate_password():
             break
         else:
             return password
-
     if (runtest == 0):
         generate_password()
 
