@@ -1,4 +1,5 @@
 import random
+from sre_parse import SPECIAL_CHARS
 import string
 import unittest
 # kun runtest==0 niin silloin testataan play—napilla
@@ -24,7 +25,7 @@ def generate_password():
         number = random.randrange(0, 100)
         spacial_char = random.choice(string.punctuation)
         # rakennetaan salasana
-        password = adjective + noun + str(number) + special_char
+        password = adjective + noun + str(number) + SPECIAL_CHARS
         if (runtest == 0):
             print(' Uusi salasanasi on: %s' % password)
         response = input("Haluatko toisen salasanan? Vastaa k tai e ")
@@ -37,7 +38,7 @@ def generate_password():
 
         # Huom! class nimi pitää olla sama kuin tiedostonnimi
         class test_salasana(unittest.TestCase)
-
+        
         def test_generate_password_success(self):
             actual = len(generate_password())
             expected = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
